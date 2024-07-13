@@ -1,84 +1,109 @@
-Testing "7-base_geometry" module.
-=================================
-using "integer_validator()" method
-----------------------------------
-
-A public instance method that validates value.
-
-Imprt the module:
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
-
-test for Missing or too many arguments
---------------------------------------
->>> bg.integer_validator()
-Traceback (most recent call last):
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-Test for Missing 'value' argument
----------------------------------
->>> bg.integer_validator("Hello")
-Traceback (most recent call last):
+[TypeError] name must be an integer
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
->>> bg.integer_validator("integer", 1, 2)
-Traceback (most recent call last):
-    ...
-TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
-
-Testing negative or zreo values
---------------------------------
->>> bg.integer_validator("El-gibbor", -1)
-Traceback (most recent call last):
+[ValueError] age must be greater than 0
+>>> try:
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-ValueError: El-gibbor must be greater than 0
-
->>> bg.integer_validator("El-gibbor", 0)
-Traceback (most recent call last):
+[ValueError] distance must be greater than 0
+>>> try:
+...     bg.integer_validator("length", 25)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-ValueError: El-gibbor must be greater than 0
-
-Test for non-integer values (list)
------------------------------------
->>> bg.integer_validator("El-gibbor", [2, 44])
-Traceback (most recent call last):
+>>>
+>>> try:
+...     bg.integer_validator("length", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: El-gibbor must be an integer
-
->>> bg.integer_validator("El-gibbor", (2, 1))
-Traceback (most recent call last):
+[TypeError] length must be an integer
+>>> try:
+...     bg.integer_validator(25, 40)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: El-gibbor must be an integer
-
->>> bg.integer_validator("float", 4.5)
-Traceback (most recent call last):
+>>> try:
+...     bg.integer_validator("height", "40")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: float must be an integer
-
->>> bg.integer_validator("El-gibbor", "str")
-Traceback (most recent call last):
+[TypeError] height must be an integer
+>>> try:
+...     bg.integer_validator(25, 40)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: El-gibbor must be an integer
-
->>> bg.integer_validator("El-gibbor", None)
-Traceback (most recent call last):
+>>>
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: El-gibbor must be an integer
-
->>> bg.integer_validator("bool", True)
-Traceback (most recent call last):
+[Exception] area() is not implemented
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: bool must be an integer
-
->>> bg.integer_validator("dict", {"key": "value"})
-Traceback (most recent call last):
+[TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>>
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: dict must be an integer
-
- >>> bg = BaseGeometry()
->>> bg.area()
-Traceback (most recent call last):
+[Exception] area() is not implemented
+>>> try:
+...     bg.integer_validator()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
-Exception: area() is not implemented
+[TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> try:
+...     bg.integer_validator("age")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+>>> try:
+...     bg.integer_validator("age", (4,))
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] age must be an integer
+>>> try:
+...     bg.integer_validator("age", [3])
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] age must be an integer
+>>> try:
+...     bg.integer_validator("age", True)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] age must be an integer
+>>> try:
+...     bg.integer_validator("age", {3, 4})
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] age must be an integer
+>>> 
