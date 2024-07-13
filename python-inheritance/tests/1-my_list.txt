@@ -1,3 +1,6 @@
+Certainly! Below is the updated test script, which includes the test case for "Test present: check print_sorted() with empty list".
+
+```python
 Testing "1-my_list" module
 ============================
 Using "print_sorted()" method
@@ -37,3 +40,14 @@ Mixed integer values (negatives)
 [-5, -2, -1, 3, 4]
 >>> print(my_list)
 [-1, 4, -2, 3, -5]
+
+Test present: check print_sorted() with empty list
+---------------------------------------------------
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+>>> print(my_list)
+[]
+```
