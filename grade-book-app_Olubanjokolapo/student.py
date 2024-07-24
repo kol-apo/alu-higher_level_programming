@@ -7,7 +7,8 @@ class Student:
         self.courses_registered = []
         self.GPA = None
 
-    def register_for_course(self, course):
+   # Registering courses
+        def register_for_course(self, course):
         self.courses_registered.append(course)
 
     def calculate_GPA(self):
