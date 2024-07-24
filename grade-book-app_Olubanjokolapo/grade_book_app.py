@@ -18,6 +18,7 @@ def main():
 
         choice = input("Enter your choice (1-7): ")
 
+      # Conditions
         if choice == '1':
             email = input("Enter student's email: ")
             names = input("Enter student's names: ")
