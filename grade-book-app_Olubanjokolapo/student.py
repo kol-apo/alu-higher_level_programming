@@ -11,7 +11,8 @@ class Student:
         def register_for_course(self, course):
         self.courses_registered.append(course)
 
-    def calculate_GPA(self):
+    # This calculates the GPA based on courses
+        def calculate_GPA(self):
         # Calculate GPA based on courses taken
         if not self.courses_registered:
             return 0.0
