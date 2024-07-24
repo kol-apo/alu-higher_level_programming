@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# This is to initialize student class 
 class Student:
     def __init__(self, email, names):
         self.email = email
