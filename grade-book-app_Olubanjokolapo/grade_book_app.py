@@ -83,7 +83,7 @@ def main():
             break
 
 # If all doesn't work, would print this
-            else:
+         else:
             print("Invalid choice. Please enter a number from 1 to 7.")
 
 if __name__ == "__main__":
