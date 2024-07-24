@@ -1,0 +1,40 @@
+def print_transcripts(students):
+    for student in students.values():
+        print(student.get_transcript())
+
+def main():
+    students = {}
+    courses = {}
+
+    while True:
+        print("1. Add Student")
+        print("2. Add Course")
+        print("3. Register Student for Course")
+        print("4. Add Grade to Student")
+        print("5. Rank Students by GPA")
+        print("6. Search Students by Grade")
+        print("7. Print Transcripts")
+        print("8. Exit")
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            add_student(students)
+        elif choice == "2":
+            add_course(courses)
+        elif choice == "3":
+            register_student_for_course(students, courses)
+        elif choice == "4":
+            add_grade_to_student(students)
+        elif choice == "5":
+            rank_students(students)
+        elif choice == "6":
+            search_students_by_grade(students)
+        elif choice == "7":
+            print_transcripts(students)
+        elif choice == "8":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
