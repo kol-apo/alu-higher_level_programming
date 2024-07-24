@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 class Course:
     def __init__(self, name, trimester, credits):
         self.name = name
