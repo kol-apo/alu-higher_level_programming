@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# This is to initialize student class 
 class Student:
     def __init__(self, email, names):
         self.email = email
@@ -6,9 +7,11 @@ class Student:
         self.courses_registered = []
         self.GPA = None
 
+   # Registering courses
     def register_for_course(self, course):
         self.courses_registered.append(course)
 
+    # This calculates the GPA based on courses
     def calculate_GPA(self):
         # Calculate GPA based on courses taken
         if not self.courses_registered:

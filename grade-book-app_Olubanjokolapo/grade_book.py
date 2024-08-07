@@ -17,12 +17,12 @@ class GradeBook:
         return student.calculate_GPA()
 
     def calculate_ranking(self):
-        # Sort students by GPA in descending order
+        # Sorting of students according to their GPA in descending order
         sorted_students = sorted(self.student_list, key=lambda student: student.GPA if student.GPA else 0, reverse=True)
         return sorted_students
 
     def search_by_grade(self, grade):
-        # Search students by grade obtained in a course
+        # This Searches the students by grade obtained in a course
         matching_students = []
         for student in self.student_list:
             for course in student.courses_registered:
@@ -32,7 +32,7 @@ class GradeBook:
         return matching_students
 
     def generate_transcript(self, student):
-        # Generate transcript for a student showing their GPA
+        # Generating transcript for a student based their GPA
         transcript = f"Transcript for {student.names}:\n"
         transcript += f"Email: {student.email}\n"
         transcript += "Courses Registered:\n"

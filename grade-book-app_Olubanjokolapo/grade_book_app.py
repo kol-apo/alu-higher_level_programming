@@ -18,6 +18,7 @@ def main():
 
         choice = input("Enter your choice (1-7): ")
 
+      # Conditions
         if choice == '1':
             email = input("Enter student's email: ")
             names = input("Enter student's names: ")
@@ -81,6 +82,7 @@ def main():
             print("Exiting Grade Book Application.")
             break
 
+# If all doesn't work, would print this
         else:
             print("Invalid choice. Please enter a number from 1 to 7.")
 
