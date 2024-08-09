@@ -1,4 +1,5 @@
-t for rectangle.py
+#!/usr/bin/python3
+# Test for rectangle.py
 """
     Defines unittests for models/rectangle.py.
     Unittest classes:
