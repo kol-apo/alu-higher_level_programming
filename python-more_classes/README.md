@@ -1,1 +1,0 @@
-0-rectangle.py
